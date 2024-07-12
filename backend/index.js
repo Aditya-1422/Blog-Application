@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 
 import authRouter from './router/authRouter.js'
 import userRouter from './router/userRouter.js'
+import postRouter from './router/postRouter.js'
+import commentRouter from './router/commentRouter.js'
 
 
 dotenv.config({path:'backend/config.env'})
@@ -28,3 +30,5 @@ app.use(express.json())
 
 app.use('/api/v1/auth',authRouter);
 app.use('/api/v1/user',userRouter);
+app.use('/api/v1/post',postRouter);
+app.use('/api/v1/comment',commentRouter);
