@@ -22,7 +22,12 @@ export const createPost = async (req,res,next) => {
 //Get All Posts
 export const getAllPost = async (req,res,next) => {
     try {
-        const posts = await Post.find();
+        const query = req.query
+        console.log(query)
+        const searchFilter = {
+            title:{$regex:query.search, $options:"i"}
+        }
+        const posts = await Post.find(query.search ? searchFilter : null);
         return res.status(201).json({
             posts
         })
