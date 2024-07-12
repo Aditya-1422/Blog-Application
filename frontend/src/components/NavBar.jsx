@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import {BsSearch} from 'react-icons/bs'
 import {FaBars} from 'react-icons/fa'
-import {  useState } from "react"
+import { useState } from "react"
 import Menu from "./Menu"
 
 
@@ -18,11 +18,8 @@ const Navbar = () => {
 
   const showMenu=()=>{
     setMenu(!menu)
-  }
-  
-   
-    const user=true
-    
+  }   
+    const user=false 
   return (
     <div className="flex items-center justify-between px-6 md:px-[200px] py-4">
     <h1 className="text-lg md:text-xl font-extrabold"><Link to="/">Blog Market</Link></h1>

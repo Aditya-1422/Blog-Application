@@ -6,6 +6,7 @@ import userRouter from './router/userRouter.js';
 import postRouter from './router/postRouter.js';
 import commentRouter from './router/commentRouter.js';
 import cookieParser from 'cookie-parser';
+import cors from 'cors'
 
 dotenv.config({ path: 'backend/config.env' });
 const app = express();
@@ -20,6 +21,7 @@ const connectDb = () => {
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors({origin:"http://localhost:3000"},{credentials:true}))
 
 // Routes
 app.use('/api/v1/auth', authRouter);
